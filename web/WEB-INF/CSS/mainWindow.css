@@ -1,0 +1,66 @@
+.hotels
+{
+  text-align: center;
+  padding: 0;
+  color: white;
+}
+
+.hotels h1
+{
+  font-family: Brush Script MT;
+  font-size: 100px;
+  margin-top: 20px;
+
+background: linear-gradient(90deg, rgba(28,0,1,1) 17%, rgba(138,9,9,1) 87%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hotels p
+{
+  margin-bottom: 50px;
+  font-size: 20px;
+
+}
+
+.p2
+{
+  margin-left: 150px;
+  width: 820px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.ranking
+{
+  margin-bottom: 35px;
+}
+
+.hotel img
+{
+  width: 100%;
+  height: auto;
+}
+
+.row
+{
+  margin-top: 0px;
+}
+
+.hotels a
+{
+  color:white;
+  text-decoration: none;
+}
+
+.hotels a:hover
+{
+  color:#6E0000;
+  text-decoration: none;
+}
+
+.ranking
+{
+  font-size: 30px;
+}

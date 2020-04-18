@@ -1,0 +1,48 @@
+.hotels
+{
+    color: white;
+    text-align: left;
+}
+
+.hotels figcaption
+{
+    margin-top: 10px;
+}
+
+.hotels a
+{
+    color:white;
+    text-decoration: none;
+}
+
+.hotels a:hover
+{
+    color:#6E0000;
+    text-decoration: none;
+}
+
+.stronaGlowna
+{
+
+    text-align: right;
+}
+
+.metryki
+{
+    margin-bottom: 0px;
+    text-align: right;
+}
+
+.sortuj
+{
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+
+
+.gora
+{
+    text-align: right;
+    margin-bottom: 20px;
+}
