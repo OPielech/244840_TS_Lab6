@@ -14,13 +14,13 @@
     <meta name="keywords" content="hotel, najlepszy hotel, ranking hoteli" />
     <meta name="author" content="Oskar Pielech">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <link rel='icon' href='../images/favicon.ico' type='image/x-icon'/>
+    <link rel='icon' href='images/favicon.ico' type='image/x-icon'/>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../CSS/ranking.css">
+    <link rel="stylesheet" href="ranking.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
@@ -30,23 +30,24 @@
         <div class="container">
             <div class="row" >
 
-                <div class="col-md-2 offset-md-10">
+                <div class="col-md-6 offset-md-6">
                     <div class="stronaGlowna">
-                        <a href="index.html" style="font-size:15px;"><br/>Strona główna</a>
+                        <a href="index.jsp" style="font-size:15px;"><br/>Strona główna</a>
+                        <a href="metryki.html" style="font-size: 15px;"><br/>Kalkulator metryk oceny obiektu hotelowego</a>
                     </div>
                 </div>
 
                 <div class="w-100"></div>
-
                 <div class="col-md-2 offset-md-10">
                     <div class="sortuj">
+                        <br>
                         Sortuj według: Ocena
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel1.jpg" class="img-fluid" alt="hotel1">
+                        <img src="images/hotel1.jpg" class="img-fluid" alt="hotel1">
                         <figcaption>
                             Pozycja: 1
                             <br>Ocena: 4,90
@@ -60,7 +61,7 @@
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel5.jpg" class="img-fluid" alt="hotel5">
+                        <img src="images/hotel5.jpg" class="img-fluid" alt="hotel5">
                         <figcaption>
                             Pozycja: 2
                             <br>Ocena: 4,80
@@ -74,7 +75,7 @@
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel3.jpg" class="img-fluid" alt="hotel3">
+                        <img src="images/hotel3.jpg" class="img-fluid" alt="hotel3">
                         <figcaption>
                             Pozycja: 3
                             <br>Ocena: 4,75
@@ -88,7 +89,7 @@
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel11.jpg" class="img-fluid" alt="hotel11">
+                        <img src="images/hotel11.jpg" class="img-fluid" alt="hotel11">
                         <figcaption>
                             Pozycja: 4
                             <br>Ocena: 4,7
@@ -102,7 +103,7 @@
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel8.jpg" class="img-fluid" alt="hotel8">
+                        <img src="images/hotel8.jpg" class="img-fluid" alt="hotel8">
                         <figcaption>
                             Pozycja: 5
                             <br>Ocena: 4,65
@@ -116,7 +117,7 @@
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel2.jpg" class="img-fluid" alt="hotel2">
+                        <img src="images/hotel2.jpg" class="img-fluid" alt="hotel2">
                         <figcaption>
                             Pozycja: 6
                             <br>Ocena: 4,70
@@ -130,7 +131,7 @@
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel4.jpg" class="img-fluid" alt="hotel4">
+                        <img src="images/hotel4.jpg" class="img-fluid" alt="hotel4">
                         <figcaption>
                             Pozycja: 7
                             <br>Ocena: 4,65
@@ -144,7 +145,7 @@
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel6.jpg" class="img-fluid" alt="hotel6">
+                        <img src="images/hotel6.jpg" class="img-fluid" alt="hotel6">
                         <figcaption>
                             Pozycja: 8
                             <br>Ocena: 4,60
@@ -158,7 +159,7 @@
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel12.jpg" class="img-fluid" alt="hotel12">
+                        <img src="images/hotel12.jpg" class="img-fluid" alt="hotel12">
                         <figcaption>
                             Pozycja: 9
                             <br>Ocena: 4,60
@@ -172,7 +173,7 @@
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel10.jpg" class="img-fluid" alt="hotel10">
+                        <img src="images/hotel10.jpg" class="img-fluid" alt="hotel10">
                         <figcaption>
                             Pozycja: 10
                             <br>Ocena: 4,55
@@ -186,7 +187,7 @@
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel7.jpg" class="img-fluid" alt="hotel7">
+                        <img src="images/hotel7.jpg" class="img-fluid" alt="hotel7">
                         <figcaption>
                             Pozycja: 11
                             <br>Ocena: 4,50
@@ -200,7 +201,7 @@
 
                 <div class="col-md-6">
                     <figure>
-                        <img src="../images/hotel9.jpg" class="img-fluid" alt="hotel9">
+                        <img src="images/hotel9.jpg" class="img-fluid" alt="hotel9">
                         <figcaption>
                             Pozycja: 12
                             <br>Ocena: 4,60
@@ -214,13 +215,13 @@
 
                 <div class="col-md-1 offset-md-11">
                     <div class="gora">
-                        <a href="ranking.html">Do góry</a>
+                        <a href="ranking.jsp">Do góry</a>
                     </div>
                 </div>
 
             </div>
+        </div>
     </section>
-
 
 </main>
 <!-- Optional JavaScript -->
