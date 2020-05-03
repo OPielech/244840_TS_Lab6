@@ -1,4 +1,4 @@
-package ts_lab7;
+package ts_lab7.calculators;
 
 public class MetricsCalculator {
     private MetricsCalculator() {

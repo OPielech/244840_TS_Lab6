@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>Hotel rezerwacje</title>
+    <title>Hotel metryki</title>
     <meta name="description" content="Sprawdź aktualny ranking najlepszych hoteli"/>
     <meta name="keywords" content="hotel, najlepszy hotel, ranking hoteli"/>
     <meta name="author" content="Oskar Pielech">
@@ -17,89 +16,69 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
+
 <body>
 <main>
-    <form action="ReservationServlet" method="get">
+    <form action="metryki-response.jsp">
         <section class="hotels">
             <div class="container">
                 <div class="row">
 
 
                     <div class="col-lg-3 offset-lg-3">
-                        Imie:
+                        Średnia cena za pokój:
                     </div>
                     <div class="col-lg-3">
-                        <label>
-                            <input type="text" name="klientImie">
-                        </label>
+                        <input type="number" name="pokojCena">
                     </div>
 
                     <div class="w-100"></div>
                     <div class="col-lg-3 offset-lg-3">
-                        Nazwisko:
+                        Całkowita liczba pokoi:
                     </div>
                     <div class="col-lg-3">
-                        <label>
-                            <input type="text" name="klientNazwisko">
-                        </label>
+                        <input type="number" name="pokojLiczbaCalkowita">
                     </div>
 
                     <div class="w-100"></div>
                     <div class="col-lg-3 offset-lg-3">
-                        E-mail:
+                        Liczba obsadzonych pokoi:
                     </div>
                     <div class="col-lg-3">
-                        <label>
-                            <input type="email" name="klientEmail">
-                        </label>
+                        <input type="number" name="pokojLiczbaObsadzonych">
                     </div>
 
                     <div class="w-100"></div>
                     <div class="col-lg-3 offset-lg-3">
-                        Data zameldowania:
+                        Liczba analizowanych dni:
                     </div>
                     <div class="col-lg-3">
-                        <label>
-                            <input type="date" name="klientDataOd">
-                        </label>
+                        <input type="number" name="liczbaDni">
                     </div>
 
                     <div class="w-100"></div>
                     <div class="col-lg-3 offset-lg-3">
-                        Data wymeldowania:
-                    </div>
-                    <div class="col-lg-3">
-                        <label>
-                            <input type="date" name="klientDataDo">
-                        </label>
-                    </div>
-
-                    <div class="w-100"></div>
-                    <div class="col-lg-3 offset-lg-3">
-                        Rodzaj pokoju:
+                        Wybierz metodę:
                     </div>
 
                     <div class="col-lg-3">
-                        <label>
-                            <select name="pokoj">
-                                <option>Jednoosobowy</option>
-                                <option>Dwuosobowy</option>
-                                <option>Rodzinny</option>
-                                <option>Dla par</option>
-                            </select>
-                        </label>
+                        <select name = "metryka">
+                            <option>RevPAR</option>
+                            <option>TRevPAR</option>
+                            <option>RevPOR</option>
+                        </select>
                     </div>
 
                     <div class="w-100"></div>
                     <div class="col-lg-2 offset-lg-5">
-                        <input type="submit" value="Rezerwuj">
+                        <input type="submit" value="Oblicz">
                     </div>
 
                     <div class="w-100"></div>
                     <div class="col-lg-2 offset-lg-6">
                         <div class="stronaGlowna">
                             <a href="index.jsp" style="font-size:15px;"><br/>Strona główna</a>
-                            <br><a href="admin-logowanie.html" style="font-size:15px;">Dla admina</a>
+                            <a href="ranking.jsp" style="font-size:15px;"><br/>Ranking</a>
                         </div>
                     </div>
                 </div>
@@ -130,4 +109,5 @@
         background-color: black;
     }
 </style>
+
 </html>

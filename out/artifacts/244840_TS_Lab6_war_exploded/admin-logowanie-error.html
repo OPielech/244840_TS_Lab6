@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hotel rezerwacje</title>
+    <title>Admin logowanie</title>
     <meta name="description" content="Sprawdź aktualny ranking najlepszych hoteli"/>
     <meta name="keywords" content="hotel, najlepszy hotel, ranking hoteli"/>
     <meta name="author" content="Oskar Pielech">
@@ -19,87 +19,43 @@
 </head>
 <body>
 <main>
-    <form action="ReservationServlet" method="get">
+    <form action="AdminServlet" method="post">
         <section class="hotels">
             <div class="container">
                 <div class="row">
 
 
                     <div class="col-lg-3 offset-lg-3">
-                        Imie:
+                        Login:
                     </div>
                     <div class="col-lg-3">
                         <label>
-                            <input type="text" name="klientImie">
+                            <input type="text" class="form-control" name="inputLogin">
                         </label>
                     </div>
 
                     <div class="w-100"></div>
                     <div class="col-lg-3 offset-lg-3">
-                        Nazwisko:
+                        Hasło:
                     </div>
                     <div class="col-lg-3">
                         <label>
-                            <input type="text" name="klientNazwisko">
+                            <input type="password" class="form-control" name="inputPassword">
                         </label>
                     </div>
 
                     <div class="w-100"></div>
-                    <div class="col-lg-3 offset-lg-3">
-                        E-mail:
-                    </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-6 offset-lg-5">
                         <label>
-                            <input type="email" name="klientEmail">
+                            <button type="submit">Zaloguj</button>
                         </label>
                     </div>
 
                     <div class="w-100"></div>
-                    <div class="col-lg-3 offset-lg-3">
-                        Data zameldowania:
-                    </div>
-                    <div class="col-lg-3">
-                        <label>
-                            <input type="date" name="klientDataOd">
-                        </label>
-                    </div>
-
-                    <div class="w-100"></div>
-                    <div class="col-lg-3 offset-lg-3">
-                        Data wymeldowania:
-                    </div>
-                    <div class="col-lg-3">
-                        <label>
-                            <input type="date" name="klientDataDo">
-                        </label>
-                    </div>
-
-                    <div class="w-100"></div>
-                    <div class="col-lg-3 offset-lg-3">
-                        Rodzaj pokoju:
-                    </div>
-
-                    <div class="col-lg-3">
-                        <label>
-                            <select name="pokoj">
-                                <option>Jednoosobowy</option>
-                                <option>Dwuosobowy</option>
-                                <option>Rodzinny</option>
-                                <option>Dla par</option>
-                            </select>
-                        </label>
-                    </div>
-
-                    <div class="w-100"></div>
-                    <div class="col-lg-2 offset-lg-5">
-                        <input type="submit" value="Rezerwuj">
-                    </div>
-
-                    <div class="w-100"></div>
-                    <div class="col-lg-2 offset-lg-6">
+                    <div class="col-lg-3 offset-lg-6">
                         <div class="stronaGlowna">
-                            <a href="index.jsp" style="font-size:15px;"><br/>Strona główna</a>
-                            <br><a href="admin-logowanie.html" style="font-size:15px;">Dla admina</a>
+                            Wprowadź poprawne dane!<br>
+                            <br><a href="index.jsp" style="font-size:15px;">Strona główna</a>
                         </div>
                     </div>
                 </div>

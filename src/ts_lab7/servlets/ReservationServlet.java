@@ -1,6 +1,11 @@
-package ts_lab7;
+package ts_lab7.servlets;
+
+import ts_lab7.calculators.ReservationCostCalculator;
+import ts_lab7.dbutils.DBUtilClient;
+import ts_lab7.entities.Reservation;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,13 +15,28 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 @WebServlet("/ReservationServlet")
 public class ReservationServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private DBUtilClient dbUtilClient;
+    private final String DB_URL = "jdbc:mysql://localhost:3306/hotel?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=CET";
+    private double priceForReservation;
+    private int roomId;
 
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+
+        try {
+            dbUtilClient = new DBUtilClient(DB_URL, "customer", "customer");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,34 +61,22 @@ public class ReservationServlet extends HttpServlet {
                 LocalDate dateTo = LocalDate.parse(request.getParameter("klientDataDo"));
 
                 if (dateTo.isBefore(dateFrom)) {
+                    isOk = false;
                     throw new IllegalArgumentException();
                 } else {
                     long days = ChronoUnit.DAYS.between(dateFrom, dateTo);
                     String room = request.getParameter("pokoj");
-                    int priceForRoom;
-                    ServletContext servletContext = getServletContext();
+                    double priceForRoom;
 
-                    switch (room) {
-                        case "Jednoosobowy":
-                            priceForRoom = Integer.parseInt(servletContext.getInitParameter("singleRoom"));
-                            break;
-                        case "Dwuosobowy":
-                            priceForRoom = Integer.parseInt(servletContext.getInitParameter("doubleRoom"));
-                            break;
-                        case "Rodzinny":
-                            priceForRoom = Integer.parseInt(servletContext.getInitParameter("familyRoom"));
-                            break;
-                        default:
-                            priceForRoom = Integer.parseInt(servletContext.getInitParameter("couplesRoom"));
-                            break;
-                    }
+                    roomId = dbUtilClient.getRoomId(room);
+                    priceForRoom = dbUtilClient.getRoomPrice(roomId);
 
-                    double priceForReservation = ReservationCostCalculator.calculate(days, priceForRoom);
+                    priceForReservation = ReservationCostCalculator.calculate(days, priceForRoom);
 
                     request.setAttribute("priceForReservation", priceForReservation);
                 }
             }
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             response.setContentType("text/html");
             response.setCharacterEncoding("UTF-8");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/rezerwacje-error.html");
@@ -76,9 +84,28 @@ public class ReservationServlet extends HttpServlet {
         }
 
         if (isOk) {
+            try {
+                addReservation(request, response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             RequestDispatcher dispatcher = request.getRequestDispatcher("/rezerwacje-response.jsp");
             dispatcher.forward(request, response);
+
         }
 
     }
-}
+
+    private void addReservation(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String name = request.getParameter("klientImie");
+        String surname = request.getParameter("klientNazwisko");
+        String email = request.getParameter("klientEmail");
+        String dateFrom = request.getParameter("klientDataOd");
+        String dateTo = request.getParameter("klientDataDo");
+
+        Reservation reservation = new Reservation(name, surname, email, dateFrom, dateTo, roomId, priceForReservation);
+        dbUtilClient.addReservation(reservation);
+    }
+
+}//end of class
